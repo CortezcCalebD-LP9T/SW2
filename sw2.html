@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+  .container {
+    width: 80%;
+    margin: 0 auto; 
+    text-align: center; 
+  }
+  #results {
+    text-align: center; 
+    margin-top: 20px; 
+    display: inline-block; 
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Calculator</h2>
+    <label for="num1">Enter Number 1:</label>
+    <input type="number" id="num1"><br><br>
+    <label for="num2">Enter Number 2:</label>
+    <input type="number" id="num2"><br><br>
+    
+    <button onclick="performArithmetic()">Arithmetic Operations</button>
+    <button onclick="performComparison()">Comparison Operations</button>
+    <button onclick="performLogical()">Logical Operations</button><br><br>
+
+    <div id="results"></div>
+  </div>
+
+  <script>
+    function performArithmetic() {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      var resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = ''; 
+
+      
+      var sum = num1 + num2;
+      var difference = num1 - num2;
+      var product = num1 * num2;
+      var quotient = num1 / num2;
+
+      
+      resultsDiv.innerHTML += 'Arithmetic Operations:<br>';
+      resultsDiv.innerHTML += 'Sum: ' + sum + '<br>';
+      resultsDiv.innerHTML += 'Difference: ' + difference + '<br>';
+      resultsDiv.innerHTML += 'Product: ' + product + '<br>';
+      resultsDiv.innerHTML += 'Quotient: ' + quotient + '<br><br>';
+    }
+
+    function performComparison() {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      var resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = ''; 
+
+      
+      var isEqual = num1 === num2;
+      var isGreater = num1 > num2;
+      var isLess = num1 < num2;
+
+      
+      resultsDiv.innerHTML += 'Comparison Operations:<br>';
+      resultsDiv.innerHTML += 'Is Equal: ' + isEqual + '<br>';
+      resultsDiv.innerHTML += 'Is Greater: ' + isGreater + '<br>';
+      resultsDiv.innerHTML += 'Is Less: ' + isLess + '<br><br>';
+    }
+
+    function performLogical() {
+      var num1 = parseFloat(document.getElementById('num1').value);
+      var num2 = parseFloat(document.getElementById('num2').value);
+      var resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = ''; // Clear previous results
+
+      
+      var andResult = num1 && num2;
+      var orResult = num1 || num2;
+      var notResult1 = !num1;
+      var notResult2 = !num2;
+
+      
+      resultsDiv.innerHTML += 'Logical Operations:<br>';
+      resultsDiv.innerHTML += 'AND Result: ' + andResult + '<br>';
+      resultsDiv.innerHTML += 'OR Result: ' + orResult + '<br>';
+      resultsDiv.innerHTML += 'NOT Result for Number 1: ' + notResult1 + '<br>';
+      resultsDiv.innerHTML += 'NOT Result for Number 2: ' + notResult2 + '<br>';
+    }
+  </script>
+</body>
+</html>
+
+
+
+
